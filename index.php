@@ -34,7 +34,7 @@
           <p class=""> Password User1       : 1234</p>
           <p class=""> Praktikum User2      : gabut</p>
           <p class=""> Password User2       : 1234</p>
-          <p class=""> Materi Akun          : gabut</p>
+          <p class=""> Materi Akun          : frostfire</p>
           <p class=""> Password Akun        : </p>
           <p class=""> 1234</p>
         </div>
