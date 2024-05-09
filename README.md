@@ -28,5 +28,5 @@ http://tugasphpjoe.free.nf/
 
 ## Feedback
 
-If you have any feedback, please reach out to us at joe@frostfire.id
+If you have any feedback, please reach out to me at joe@frostfire.id
 
