@@ -23,7 +23,13 @@ if ($_SESSION['role'] !== 'FOUNDER') {
 <body>
     <?php include('./admin/sidebar.php') ?>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <h3>Tampil Petugas</h3>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="mb-0">Tampil Petugas</h3>
+            <button class="btn btn-primary" onclick="window.location.href='tambah_petugas.php'">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Add Petugas
+            </button>
+        </div>
         <table class="table table-hover table-striped" style="overflow-x:auto;">
             <thead>
                 <tr>

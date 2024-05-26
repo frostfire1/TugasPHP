@@ -7,7 +7,7 @@ include "./component/iniadminkah.php";
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Tampil Produk</title>
+    <title>Display Products</title>
     <style>
         table {
             display: block;
@@ -21,22 +21,22 @@ include "./component/iniadminkah.php";
     <?php include('./admin/sidebar.php') ?>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="mb-0">Tampil Petugas</h3>
+            <h3 class="mb-0">Display Products</h3>
             <button class="btn btn-primary" onclick="window.location.href='tambah_produk.php'">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                Tambah Produk
+                Add Product
             </button>
         </div>
         <table class="table table-hover table-striped" style="overflow-x:auto;">
             <thead>
                 <tr>
-                    <th>NO</th>
-                    <th>GAMBAR</th>
-                    <th>NAMA</th>
-                    <th>HARGA</th>
-                    <th>DESKRIPSI</th>
-                    <th>qry</th>
-                    <th>AKSI</th>
+                    <th>No</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Stock</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,9 +54,9 @@ include "./component/iniadminkah.php";
                         <td>Rp.<?= $data_produk['harga'] ?></td>
                         <td><?= $data_produk['deskripsi'] ?></td>
                         <td><?= $data_produk['stok'] ?></td>
-                        <td><a href="ubah_produk.php?id_produk=<?= $data_produk['id_produk'] ?>" class="btn btn-success">Ubah</a>
+                        <td><a href="edit_product.php?id_produk=<?= $data_produk['id_produk'] ?>" class="btn btn-success">Edit</a>
                             |
-                            <a href="hapus_produk.php?id_produk=<?= $data_petugas['id_produk'] ?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus</a>
+                            <a href="delete_product.php?id_produk=<?= $data_produk['id_produk'] ?>" onclick="return confirm('Are you sure you want to delete this data?')" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 <?php
@@ -68,5 +68,4 @@ include "./component/iniadminkah.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 </body>
-
 </html>

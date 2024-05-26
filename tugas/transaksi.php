@@ -116,5 +116,6 @@ header("Location: login.php");
 
 <?php
 }
+include "footer.php";
 ?>
 </html>

@@ -13,9 +13,9 @@ include "./component/iniadminkah.php";
 <body>
     <?php include('./admin/sidebar.php') ?>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <h1>HALLO <?= $_SESSION['nama'] ?>👋</h1>
+        <h1>Hello, <?= htmlspecialchars($_SESSION['nama']) ?>👋</h1>
         <br>
-        <h2>Daftar Transaksi yang Belum Diproses:</h2>
+        <h2>Unprocessed Transactions:</h2>
         <div class="row">
             <?php
             require_once "koneksi.php";
@@ -28,18 +28,18 @@ include "./component/iniadminkah.php";
                     <div class="col-md-4 mb-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">ID Transaksi: <?= $row['id_transaksi'] ?></h5>
-                                <p class="card-text">Nama Pelanggan: <?= $row['nama'] ?></p>
-                                <p class="card-text">Tanggal Transaksi: <?= $row['tgl_transaksi'] ?></p>
-                                <p class="card-text">Status: Menunggu Konfirmasi</p>
-                                <a href="checkout_confirm.php?id_transaksi=<?= $row['id_transaksi'] ?>&id_petugas=<?= $_SESSION['id'] ?>" class="btn btn-primary">ACC</a>
+                                <h5 class="card-title">Transaction ID: <?= htmlspecialchars($row['id_transaksi']) ?></h5>
+                                <p class="card-text">Customer Name: <?= htmlspecialchars($row['nama']) ?></p>
+                                <p class="card-text">Transaction Date: <?= htmlspecialchars($row['tgl_transaksi']) ?></p>
+                                <p class="card-text">Status: Awaiting Confirmation</p>
+                                <a href="checkout_confirm.php?id_transaksi=<?= htmlspecialchars($row['id_transaksi']) ?>&id_petugas=<?= htmlspecialchars($_SESSION['id']) ?>" class="btn btn-primary">Accept</a>
                             </div>
                         </div>
                     </div>
             <?php
                 }
             } else {
-                echo "<p>Tidak ada transaksi yang belum diproses.</p>";
+                echo "<p>No unprocessed transactions.</p>";
             }
             ?>
         </div>
